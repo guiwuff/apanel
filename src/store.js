@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     expandedAll: false,
     expanded: false,
+    sidebarActive: false,
     pages: [
       {
         slug: 'dashboard',
@@ -85,9 +86,15 @@ export default new Vuex.Store({
     },
     pages: (state) => {
       return state.pages
+    },
+    sidebarActive: (state) => {
+      return state.sidebarActive
     }
   },
   mutations: {
+    TOGGLE_SIDEBAR: (state) => {
+      state.sidebarActive = !state.sidebarActive
+    },
     TOGGLE_MENU_ALL: (state) => {
       state.expandedAll = !state.expandedAll
     },
@@ -96,6 +103,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    toggleSidebar: (context) => {
+      context.commit('TOGGLE_SIDEBAR')
+    },
     toggleMenuAll: (context) => {
       context.commit('TOGGLE_MENU_ALL')
     },

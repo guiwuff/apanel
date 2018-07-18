@@ -44,7 +44,7 @@ export default {
   methods: {
     drawTotalBets () {
       this.totalBets = {
-        labels: ['1','2','3','4','5','6','7'],
+        labels: ['1', '2', '3', '4', '5', '6', '7'],
         datasets: [
           {
             label: 'Total Bets Daily',
@@ -55,7 +55,7 @@ export default {
       }
     },
     getRandomInt () {
-      return Math.floor(Math.random() * ( 500 - 50 + 10)) + 50
+      return Math.floor(Math.random() * (500 - 50 + 10)) + 50
     }
   }
 }

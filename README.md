@@ -2,6 +2,8 @@
 
 > WIP
 
+Demo https://apanel.netlify.com/
+
 ## Devs
 
 Install deps
