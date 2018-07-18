@@ -2,6 +2,11 @@
   <div class="sidebar" id="sidebar">
     <b-container fluid>
       <b-row>
+        <b-col class="py-2">
+          <b-btn-close size="sm" @click="toggleSidebar"></b-btn-close>
+        </b-col>
+      </b-row>
+      <b-row>
         <b-col>
           <div id="brand" class="brand text-center">
             <router-link to="/"
@@ -41,12 +46,16 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import SidebarMenu from './SidebarMenu'
 
 export default {
   name: 'sidebar',
   components: {
     SidebarMenu
+  },
+  methods: {
+    ...mapActions(['toggleSidebar'])
   }
 }
 </script>
