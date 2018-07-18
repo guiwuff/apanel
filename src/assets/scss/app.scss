@@ -1,0 +1,142 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import 'types';
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Segoe UI', Helvetica, Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $light-blue-bg;
+}
+
+.wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: stretch;
+}
+.main-section {
+  flex: 1 1 auto;
+  position: relative;
+  overflow-y: auto;
+  .page-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -.1rem;
+    color: $gray-600;
+    margin-top: 1.5rem;
+    &::after {
+      margin-top: .4rem;
+      content: " ";
+      display: block;
+      background-color: $blue;
+      width: 3rem;
+      height: 4px;
+    }
+  }
+}
+.top-navbar {
+  background-color: rgba(white, .7);
+  border-bottom: 1px solid rgba($blue,.1);
+}
+.search-data-form {
+  font-size: small;
+  border: none;
+  border-bottom: 2px solid rgba($dark,.2);
+  box-shadow: none;
+  background-color: rgba(white,0);
+  &:focus {
+    box-shadow: none;
+    background-color: $light-blue-bg;
+  }
+}
+
+.sidebar {
+  flex: 0 0 auto;
+  overflow-y: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  max-width: 200px;
+  width: 30%;
+  height: 100%;
+  border-right: 1px solid $light-blue-border;
+  background-color: #ffffff;
+
+  .btn-nav-small {
+    font-size: .65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .menu {
+    margin-top: .7rem;
+    &.expanded {
+      &>li>a {
+        border-bottom: 1px solid $light-blue-border;
+      }
+      .top-dropdown {
+        transition: all .5s;
+        display: block;
+      }
+    }
+    .top-dropdown {
+      display: none;
+      transition: all .5s;
+      font-size: .75rem;
+      font-weight: normal;
+      list-style: none;
+      padding-left: 1.5rem;
+      margin-top: .7rem;
+      & > li > a {
+        display: block;
+        padding: .1rem 0;
+      }
+    }
+    &>li>a {
+      transition: all .5s;
+      padding: .4rem .6rem;
+      display: block;
+      font-family: 'Gotham SSm A', sans-serif;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: -0.04rem;
+      &:hover {
+        transition: all .5s;
+        background-color: rgba($blue, .1);
+        & > .top-dropdown {
+          transition: all .5s;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.card-title {
+  font-weight: 700;
+}
+.card-summary {
+  .card-body {
+    padding: .6rem 1rem;
+  }
+  .card-focus {
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+  .card-footer {
+    font-size: .75rem;
+    padding: .2rem 1rem;
+  }
+}
+
+
+footer {
+  $footer-background-color: darken($blue, 25%);
+  background-color: $footer-background-color;
+  color: lighten($footer-background-color, 40%);
+  font-size: .8rem;
+}
